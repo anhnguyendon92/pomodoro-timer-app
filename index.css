@@ -1,0 +1,154 @@
+:root {
+    --orange: #F87070;
+    --green: #70F3F8;
+    --perpule: #D881F8;
+    --light-blue: #D7E0FF;
+    --dark-blue: #1E213F;
+    --darker-blue:#161932;
+    --white: #FFFFFF;
+    --beige: #EFF1FA;
+}
+
+body {
+    background-color: #1E213F;
+    height: 100%;
+    position: relative;
+    font-size: 16px;
+  }
+  
+  .kumbh__font {
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  
+  .mono__font {
+    font-family: "Space Mono", monospace;
+  }
+  
+  .roboto__font {
+    font-family: "Roboto Slab", serif;
+  }
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-top: 32px;
+    font-size: 1.5rem;
+}  
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4.23px;
+    line-height: 100%;
+    font-size: 0.69rem;
+  }
+
+.wrapper {
+    position: relative;
+}
+
+img[data-src] {
+  -webkit-filter: blur(0.2em);
+          filter: blur(0.2em);
+}
+
+img {
+  -webkit-filter: blur(0em);
+          filter: blur(0em);
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
+.progress-ring {
+    -webkit-box-shadow: 0px 1px 5px 17px #292d53;
+            box-shadow: 0px 1px 5px 17px #292d53;
+    background-color: #161932;
+    border-radius: 50%;
+  }
+
+  .progress-ring-circle {
+    stroke: #F87070;
+    -webkit-transition: 0.35s stroke-dashoffset;
+    transition: 0.35s stroke-dashoffset;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+
+  .lime-ring {
+    stroke: #70F380;
+  }
+  
+  .purple-ring {
+    stroke: #D881F8;
+  }
+
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+  }
+
+  .ctrls {
+    position: relative;
+    bottom: 200px;
+    left: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    place-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .start-pause {
+    width: 110px;
+    background-color: inherit;
+    border: none;
+    color: #EFF1FA;
+    font-size: 0.875rem;
+    letter-spacing: 13px;
+    font-weight: 600;
+  }
+
+  .start-pause:hover {
+    -webkit-animation: heartBeat 1s;
+          animation: heartBeat 1s;
+  }
+
+  time {
+    font-size: 4rem;
+    color: #ffffff;
+    font-weight: 800;
+  }
+ /* Pomodoro, short and long break selectors  */
+
+
+.break-mode-btn {
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  color: #EFF1FA;
+  height: 0;
+  opacity: 0;
+  width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}

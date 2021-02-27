@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Pomodoro app</title>
+</head>
+<body>
+  <main class="wrapper">
+    <div class="container">
+      <h1>Pomodoro</h1>
+      <form class="break-form">
+        <!-- <-- Groups related elements in a form *> -->
+        <fieldset class="break-mode">
+        <!-- Defines a caption for a <fieldset> element -->
+        <legend class="sr-only"></legend>
+        <div class="pomodoro-ctrls">
+          <input class="radio" name="breaks" id="pomodoro" class="pomodora-btn break-mode-btn" checked>
+          <label for="pomodoro" class="break-mode-ctrls">pomodoro</label>  
+        </div>
+
+        <div class="pomodoro-ctrls">
+          <input type="radio" name="breaks" id="short" class="short-btn break-mode-btn">
+          <label for="short" class="break-mode-ctrls">Short Break</label>
+        </div>
+
+        <div class="pomdoro-ctrls">
+          <input type="radio" name="break" id="long" class="long-btn break-mode-btn">
+          <label for="long" class="break-mode-ctrls">Long Break</label>
+        </div>
+      </fieldset>
+      </form>
+      <svg class="progress-ring" width="272" height="272" aria-label="pomodoro clock">
+        <circle class="progress-ring-circle" stroke="white" stroke-width="8" fill="transparent" r="120" cx="136"
+          cy="136" />
+      </svg>
+    </div>
+    <div class="ctrls">
+      <!-- <i class="fas fa-business-time"></i> -->
+       <time datetime="PT0H15M0S"></time>
+       <button class="start-pause">Start</button>
+     </div>
+   </div>
+   <div class="menu-options">
+     <button class="menu-options-btn"  tabindex="0">
+       <img src="/assets/icon-settings.svg" data-src="/assets/icon-settings.svg" alt="menu settings">
+     </button>
+   </div>
+   </div>
+   <div class="modal-settings">
+     <div class="settings-nav">
+       <h2> Settings</h2>
+       <img src="/assets/icon-close.svg" data-src="/assets/icon-close.svg" alt="close the menu"
+         class="close-menu" role="button" tabindex="0"
+         id="closebtn" aria-label="close menu button">
+
+     </div>
+     <hr>
+     <form class="main-ctrl-panel">
+       <div class="time-settings">
+         <h3>time(minutes)</h3>
+         <div class="timers">
+           <!--pomodoro timer-->
+           <div class="time-incremental">
+             <label for="timesetter" class="timesetter-labels">pomodoro
+               <input type="number" name="timesetter" id="timesetter" class="time-control"
+                value="25" min="5" max="90"
+                 step="1">
+             </label>
+
+             <div class="controls">
+               <button type="button" class="controls__timer"  tabindex="0">
+                 <img src="/assets/icon-arrow-up.svg" data-src="/assets/icon-arrow-up.svg"
+                  alt="increment up" class="controls-timer-btn btn-up" />
+               </button>
+               <button type="button" class="controls-timer" tabindex="0">
+                 <img src="/assets/icon-arrow-down.svg" data-src="/assets/icon-arrow-down.svg"
+                  alt="increment down" class="controls-timer-btn btn-down" />
+               </button>
+             </div>
+
+           </div>
+           <!--short time break-->
+           <div class="time-incremental">
+             <label for="shortsetter" class="timesetter-labels">short break
+               <input type="number" name="timesetter" id="shortsetter"
+                class="time-control-short" value="5" min="1"
+                 max="10" step="1">
+             </label>
+
+             <div class="controls">
+               <button type="button" class="controls-timer"  tabindex="0">
+                 <img src="/assets/icon-arrow-up.svg" data-src="/assets/icon-arrow-up.svg"
+                  alt="increment up" class="controls-timer-btn btn-up" />
+               </button>
+               <button type="button" class="controls-timer" tabindex="0">
+                 <img src="/assets/icon-arrow-down.svg" data-src="/assets/icon-arrow-down.svg"
+                  alt="increment down" class="controls-timer-btn btn-down" >
+               </button>
+             </div>
+
+           </div>
+
+           <!--long time break-->
+           <div class="time-incremental">
+             <label for="longsetter" class="timesetter-labels">long break
+               <input type="number" name="timesetter" id="longsetter"
+                class="time-control-long" value="15" min="11"
+                 max="20" step="1">
+             </label>
+
+             <div class="controls">
+               <button type="button" class="controls-timer"  tabindex="0">
+                 <img src="/assets/icon-arrow-up.svg" data-src="/assets/icon-arrow-up.svg"
+                  alt="increment up" class="controls-timer-btn btn--up" />
+               </button>
+               <button type="button" class="controls-timer"  tabindex="0">
+                 <img src="/assets/icon-arrow-down.svg" data-src="/assets/icon-arrow-down.svg"
+                  alt="increment down" class="controls-timer-btn btn-down" />
+               </button>
+             </div>
+
+           </div>
+         </div>
+       </div>
+       <hr class="break__line">
+       <!--font selection -->
+       <fieldset class="fonts">
+         <h3>font</h3>
+         <legend class="sr-only">
+           select a font
+         </legend>
+         <div class="font-selection">
+
+           <div class="fonts__container">
+             <input type="radio" name="font-list" id="kumbh" class="fonts-list kumbh" checked>
+             <label for="kumbh" class="fonts-label">Aa</label>
+           </div>
+
+           <div class="fonts-container">
+             <input type="radio" name="font-list" id="roboto" class="fonts-list roboto">
+             <label for="roboto" class="fonts-label">Aa</label>
+           </div>
+
+           <div class="fonts-container">
+             <input type="radio" name="font-list" id="mono" class="fonts-list mono">
+             <label for="mono" class="fonts-label">Aa</label>
+           </div>
+
+         </div>
+       </fieldset>
+       <hr class="break__line">
+       <!--color selection-->
+       <fieldset class="colors">
+         <h3>color</h3>
+         <legend class="sr-only">
+           select a color
+         </legend>
+         <div class="color-selection">
+           <div class="color-container">
+             <input type="radio" name="color-selector" id="orange" class="orange color-list" checked>
+             <label for="orange" class="color-label">&#10003;</label>
+           </div>
+           <div class="color-container">
+             <input type="radio" name="color-selector" id="turquoise" class="turquoise color-list">
+             <label for="turquoise" class="color-label">&#10003;</label>
+           </div>
+           <div class="color-container">
+             <input type="radio" name="color-selector" id="purple" class="purple color-list">
+             <label for="purple" class="color-label">&#10003;</label>
+           </div>
+
+         </div>
+       </fieldset>
+       <button type="submit" class="apply" tabindex="0">Apply</button>
+     </form>
+ </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
