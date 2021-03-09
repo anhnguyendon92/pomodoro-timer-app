@@ -1,14 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro | FrontEnd Mentor</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="/css/index.css">
+
+
+  <title>Frontend Mentor | Pomodoro app</title>
 </head>
+
 <body>
-  
+  <div id="wrapper" class="center">
+    <h2 class="font-class ">pomodoro</h2>
+    <nav class="center">
+      <ul>
+        <li class=" font-class pointer active">pomodoro</li>
+        <li class="font-class pointer">short break</li>
+        <li class="font-class pointer">long break</li>
+      </ul>
+      <div id="bg-indicator"></div>
+    </nav>
 
+    <section id="timer" class="center">
+      <div id="outer-circle">
+        <div id="inner-circle">
+          <svg id="ring">
+            <circle id="progress-ring" r="163" cx="50%" cy="50%">
+            </circle>
+            <text class="font-class no-select" x="50%" y="50%" id="countdown" dominant-baseline="middle"
+              text-anchor="middle">25:00</text>
+            <text onclick="action(this.innerHTML)" x="50%" y="75%" class="font-class pointer" id="action"
+              dominant-baseline="middle" text-anchor="middle">start </text>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="settings" class="center"><img id="cog" src="/assets/icon-settings.svg" alt=""></section>
+    <dialog class="pointer" id="dialog-settings">
+      <div id="dialog-header">
+        <div id="dialog-title">Settings</div>
+        <img id="close-button" src="/assets/icon-close.svg" alt="">
+      </div>
+      <hr>
 
-  <script src="index.js"></script>
+      <div id="dialog-main-container">
+        <h4>Time (minutes)</h4>
+        <div id="config-time">
+          <div class="select-container">
+            <label>pomodoro</label>
+            <input class="pointer" id="select-pomodoro" value="25" min="20" max="50" type="number">
+          </div>
+          <div class="select-container">
+            <label>short break</label>
+            <input class="pointer" id="select-short-break" value="5" min="1" max="10" type="number">
+          </div>
+          <div class="select-container">
+            <label>long break</label>
+            <input class="pointer" id="select-long-break" value="15" min="15" max="30" type="number">
+          </div>
+        </div>
+        <hr>
+        <div id="select-font-container">
+          <h4>Font </h4>
+
+          <div class="radio-wrapper">
+            <label class="radio-container"><input id="kumbh" type="radio" name="font-radio" checked>
+              <span id="kumbh-sans" class="selected">Aa</span>
+            </label>
+            <label class="radio-container"><input id="roboto"  type="radio" name="font-radio">
+              <span id="roboto-slab" class="selected">Aa</span>
+            </label>
+            <label class="radio-container"><input id="space" type="radio" name="font-radio">
+              <span id="space-mono" class="selected">Aa</span>
+            </label>
+          </div>
+        </div>
+          
+          <hr>
+          <div id="select-color-container">
+            <h4>color</h4>
+
+            <div class="radio-wrapper">
+              <label class="radio-container"><input id="orange-id" type="radio"  name="color-radio" checked>
+                <span id="salmon-pink" class="checkmark"></span>
+              </label>
+              <label class="radio-container"><input id="cyan-id"  type="radio" name="color-radio">
+                <span id="cyan" class="checkmark"></span>
+              </label>
+              <label class="radio-container"><input id="magenta-id"   type="radio" name="color-radio">
+                <span id="magenta" class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button class="pointer" id="button-apply">Apply</button>
+    </dialog>
+  </div>
 </body>
+<script src="/js/index.js"></script>
+
 </html>

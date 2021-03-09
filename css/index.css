@@ -1,0 +1,410 @@
+:root {
+    --orange: #F87070;
+    --cyan: #70F3F8;
+    --purple: #D881F8;
+    --light-blue: #D7E0FF;
+    --dark-blue: #1E213F;
+    --darker-blue:#161932;
+    --white: #FFFFFF;
+    --beige: #EFF1FA;
+}
+* {
+    outline: none;
+    border: none;
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+    color: var(--light-blue);
+}
+/* Main tags */
+h1{
+    font-weight: bold;
+    font-size: 100px;
+    letter-spacing: -5px;
+    line-height: 120px;
+}
+h2{
+    margin-top: 48px;
+    margin-bottom: 56px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+}
+h3 {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+h4{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--darker-blue)
+}
+hr {
+    border-top:1px solid #E3E1E1 ;
+}
+body{
+    background-color: var(--dark-blue);
+}
+label{
+    color: var(--dark-blue);
+    opacity: 0.4;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+}
+nav{
+    width: 373px;
+    height: 63px;
+    border-radius:50px;
+    background-color: var(--darker-blue);
+    z-index: 10;
+    padding-left: 10px;
+}
+nav > ul{
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+nav > ul > li{
+    opacity: 0.4;
+    transition: opacity 100 ms ease-out;
+}
+input{
+    margin-top: 8px;
+    width: 140px;
+    height: 48px;
+    padding: 0px 15px;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--dark-blue);
+    background-color: var(--beige);
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number]::-webkit-inner-spin-button {  
+    background: url(/assets/icon-arrow-up.svg) no-repeat top,url(/assets/icon-arrow-down.svg) no-repeat bottom;
+    background-size: contain;
+    opacity: 1;
+    width: 12px;
+    height: 17px;
+    cursor: pointer;
+}
+/* Structural Rules*/
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+#bg-indicator{
+    border-radius: 50px;
+    height: 48px;
+    width: calc(95% / 3);
+    margin-top: -55px;
+    background-color: var(--orange);
+    transition: margin-left 300ms ease-out;
+}
+/* timer */
+#timer {
+    margin-top: 30px;
+    position: relative;    
+}
+#outer-circle{
+    display: flex;
+    height: 410px;
+    width: 410px;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+    box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+}
+#inner-circle{
+    display: flex;
+    margin: auto;
+    height: 366px;
+    width: 366px;
+    border-radius: 50%;
+    background: var(--darker-blue);
+}
+#ring {
+    margin: auto;
+    width: 339px;
+    height: 339px;
+
+}
+#ring > circle{
+    fill: transparent;
+    stroke: var(--orange);
+    stroke-width: 10;
+    stroke-dasharray: 1024, 1024;
+    stroke-dashoffset: 1024;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 200ms ease-out;
+}
+#countdown{
+    fill: var(--light-blue);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 101px;
+    letter-spacing: -5px;
+}
+#action{
+    fill: var(--light-blue);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+#action:focus{
+    fill: var(--orange);
+}
+#settings {
+    margin-top: 36px;
+    font-size: 28px;
+    z-index: 5;
+}
+#dialog-settings{
+    position:absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    height: 464px;
+    width: 540px;
+    z-index: 10;
+}
+
+#dialog-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 34px 38px 31px 40px;
+   
+}
+#dialog-main-container{
+    display: flex;
+    flex-direction: column;
+    
+    margin:28px 38px 59px 40px
+}
+
+#dialog-title{
+    color: var(--darker-blue);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 28px;
+}
+#config-time{
+    margin:22px 0px 24px 0px ;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#select-font-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:24px 0;
+}
+#select-color-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:24px 0;
+}
+#cog{
+    opacity: 0.5;
+    color: var(--light-blue);
+    cursor: pointer;
+}
+#cog:active{
+    opacity: 1;
+    color: var(--light-blue);
+    cursor: pointer;
+}
+
+/* color ID */
+#salmon-pink{
+    background-color: var(--orange);
+}
+#cyan{
+    background-color: var(--cyan);
+}
+#magenta{
+    background-color: var(--purple);
+}
+/* fonts*/
+#kumbh-sans{
+    font-family:"Kumbh Sans", sans-serif;
+}
+#roboto-slab{
+    font-family: 'Roboto Slab', serif;
+}
+#space-mono{
+    font-family: 'Space Mono', monospace;
+}
+/*helper classes*/
+.select-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.button-wrapper{
+    width: 152px;
+    height: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+.radio-wrapper{
+    width: 152px;
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content:space-between;
+    align-items: center;
+}
+.active{
+    opacity: 1;
+    transition: color 0.5s ease-out;
+    color: var(--dark-blue); 
+}
+.pointer{
+    user-select: none;
+    cursor: pointer;
+}
+.no-select{
+    user-select: none;
+}
+/* buttons */
+.button-font{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--beige);
+    color: var(--dark-blue);
+}
+.button-color{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.button-font:focus{
+    color: var(--white);
+    background-color: var(--darker-blue);
+}
+.button-color:focus::after{
+    content: "\2713";
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--darker-blue);
+}
+#button-apply{
+    position: absolute;
+    top: 94%;
+    left: 36%;
+    width: 140px;
+    height: 53px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    background-color: var(--orange);
+    border-radius: 26.5px;
+}
+#button-apply:active{
+    opacity: 0.2;
+}
+/*center*/
+.center{
+    margin: 0 auto;
+}
+
+
+/*radio buttons*/
+/* The container */
+.radio-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 1;
+}
+  
+  /* Hide the browser's default radio button */
+  .radio-container input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 1;
+
+  }
+  /* When the radio button is checked, add a blue background */
+  .radio-container input:checked ~ .checkmark{
+    background-image: url(/assets/Check_mark_9x9.svg);
+    background-size: 14px;
+    background-position:center;
+    background-repeat: no-repeat;
+    
+  }
+  .selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 1;
+    font-size: 15px;
+    background-color: var(--beige);
+    color: var(--darker-blue);
+  }
+  .radio-container input:checked ~ .selected{
+    background-color: var(--darker-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
